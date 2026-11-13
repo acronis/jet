@@ -18,7 +18,7 @@ func Test_Shutdown(t *testing.T) {
 
 	go func() {
 		time.Sleep(time.Second * 1)
-		s.Shutdown(context.Background())
+		_ = s.Shutdown(context.Background())
 	}()
 
 	err = RunServer(context.Background(), &s, l)
